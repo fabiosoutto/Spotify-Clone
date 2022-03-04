@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,body{height: 100%;}
+
+.sidebar{
+    float: left;
+    width: 250px;
+    padding: 10px 10px;
+    height: 100%;
+    overflow-y: auto; /*cria sidebar somente no local*/
+    overflow-x: hidden;   /* esconde a sidebar */
+    background-color: #000;
+}
+
+.sidebar-wraper{    
+    padding-bottom: 200px;  /* cria espaço abaixo do site para evitar colisão */
+}
+
+.sidebar-menu{
+    margin: 20px 0;
+    color: rgb(190, 190, 190);
+}
+
+.sidebar-logo img{      /* tecnica de encaixe da logo */
+    max-width: 250px;
+    width: 100%;
+}
+
+.sidebar-menu a{
+    color: rgb(190, 190, 190);
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar-menu svg{    /* espaço entre icones e links  */
+    margin: 0 20px;
+}
+
+.sidebar-menu a.sidebar-menu-selecionado{
+    color: white;
+    background-color: rgb(80, 80, 80);
+    border-radius: 5px;
+}
+
+.sidebar-menu-item{
+    margin-top: 12px;
+    cursor: pointer;
+    vertical-align: middle;  /* alinhados na vertical */
+}
+
+.sidebar-menu p.sidebar-menu-title{
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.sidebar-menu-componente{   /* criando o componente '+' */
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+}
+
+.sidebar-menu-item span{   /*  texto do menu   */
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.sidebar-menu-item img{   /*  alinhando a imagem do menu  */
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;  /* alinhando na vertical */
+    display: inline-block;
+}
+
+.sidebar-playlists{
+    padding: 20px 0;
+    border-top: 1px solid rgb(40, 40, 40);   /*  barra divisória do menu  */
+}
+
+.sidebar-playlists a{
+    margin: 10px 0;
+    display: block;
+    color: rgb(190, 190, 190);
+    text-decoration: none;
+}
+
+.sidebar-playlists a:hover{
+    color: white;
+}
+
+/* iniciando a parte principal - MAIN  */
+
+.main{
+    width: calc(100% - 250px);  /* calculando o resto da tela, subtraindo a barra lateral */
+    background-color: rgb(30, 30, 30);
+    height: 100%;
+
+    float: left;   /* cross-browser - importante  */
+    padding: 15px 50px;
+    overflow-y: auto;
+}
+
+/* iniciando com o Flex Box  */
+
+.main-row{
+    display: flex;
+    flex-wrap: wrap;  /* manipula as dimensões sem deixar em uma só linha */
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.main-wraper{
+    padding-bottom: 200px;  /* cross-browser */
+}
+
+.main-row-title{
+    width: 100%;
+}
+
+.main-row-title h2{
+    color: white;
+}
+
+.main-col{
+    cursor: pointer;
+    width: 15%;         /* tamanho do box  */
+    margin-right: 1%;
+    margin-top: 20px;
+
+    background-color: #282828;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-col h3{
+    color: white;
+    margin: 8px 0;
+}
+
+.main-col p{
+    color: rgb(100, 100, 100);
+    margin: 8px 0;
+    font-size: 13px;
+    text-align: left;
+}
+
+/*  Estilizando o player  */
+
+.player{
+    width: 100%;
+    padding: 20px;
+    height: 130px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    background-color: rgb(60, 60, 60);
+}
+
+.player-artist{
+    width: 20%;
+}
+
+.player-artist img{
+    max-width: 70px;
+    display: inline-block;     /* alinhando no meio  */
+    vertical-align: middle;   /*  serve para componentes pequenos  */ 
+}
+
+.player-artist h3{
+    display: inline-block;
+    color: white;
+    font-weight: normal;  /* padrão é bold  */
+    font-size: 20px;
+    vertical-align: middle;   /*  alinhamento vertical  */
+    margin-left: 10px;
+}
+
+.player-artist h3 > span{     /* inserido via JS  */
+    color: rgb(200, 200, 200);
+    font-size: 13px;
+}
+
+.player-control{
+    width: 70%;
+    text-align: center;
+}
+
+.player-control-buttons a{
+    color: white;
+    margin: 8px 15px;
+    font-size: 18px;
+}
+
+.player-control-progress{
+    width: 100%;
+    max-width: 600px;
+    height: 7px;
+    margin-top: 20px;
+    position: relative;   /*  para colocar a div filha em 'absolute'  */
+    border-radius: 8px;
+    display: inline-block;  /* alinha e centraliza tudo  */
+    background-color: rgb(130, 130, 130);
+}
+
+.progress2{
+    position: absolute;  /*  div principal em 'relative'  */
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 7px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+/*  responsividade */
+@media screen and (max-width: 1700px){
+    .main-col{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .main{
+        width: 100%;
+    }
+    .sidebar{
+        display: none;
+    }
+    .main-col{
+        width: 48%;
+        margin-right: 2%;
+    }
+}
