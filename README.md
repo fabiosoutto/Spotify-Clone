@@ -1,2 +1,2 @@
 # Spotify-Clone
-Clone do Spotify feito em Html5, Css3 e JavaScript.
+Clone do Spotify feito em HTML5, CSS3 e JavaScript.
