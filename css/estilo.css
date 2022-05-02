@@ -92,6 +92,12 @@ html,body {
     border-left: 1px solid white;
 }
 
+/* ====== Navbar-Mobile =====*/
+
+#navbar-mobile{
+    display: none;
+}
+
 /* ==== show case ===== */
 #showcase {
     height: 100vh;
@@ -117,7 +123,7 @@ html,body {
 
 #showcase .showcase-container p {
     margin: 15px 0;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -222,4 +228,186 @@ html,body {
     height: 20px;
     width: auto;
     margin-left: 10px;
+}
+
+/* ============== RESPONSIVIDADE ===============  */
+
+@media screen and (max-width: 768px){
+    #navbar{
+        display: none;
+    }
+
+    #navbar-mobile{
+        display: block;
+        background-color: black;
+        color: white;
+        /*justify-content: center;*/
+        /*position: fixed;*/
+        /*top: 0;*/
+        width: 100%;
+    }
+
+    #navbar-mobile .navbar-container-mobile {
+        width: 100%;
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+    
+    #navbar-mobile .navbar-container-mobile ul {
+        display: flex;
+        list-style: none;
+        font-weight: bold;
+    }
+    
+    #navbar-mobile .navbar-container-mobile ul li {
+        padding: 0 15px;
+        transition: all 500ms ease;
+    }
+    
+    #navbar-mobile .navbar-container-mobile ul li a {
+        text-decoration: none;
+        color: white;
+        transition: all 500ms ease;
+    }
+    
+    
+    #navbar-mobile .navbar-container-mobile ul li a:hover {
+        color: #1d8954;
+        cursor: pointer;
+    }
+    
+    #navbar-mobile .navbar-container-mobile ul li:hover {
+        color: #1d8954;
+        cursor: pointer;
+    }
+    
+    #navbar-mobile .navbar-container-mobile ul li:nth-child(3) {
+        border-left: 1px solid white;
+    }
+
+    .logo-mobile {
+        height: 120px;
+        width: auto;
+    }
+
+    #showcase .showcase-container h2 {
+        font-size: 3.0rem;
+        font-weight: bold;
+    }
+
+    #showcase .showcase-container p {
+        text-align: center;
+        margin: 15px 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    /* ==== footer ==== */ 
+
+    #footer {
+        background: black;
+        color: white;
+        padding: 40px 0;
+    }
+
+    #footer .footer-content {
+        display: flex;
+        width: 100%;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    #footer .footer-content .footer-menu {
+        display: block;
+        justify-content: space-between;
+        margin: 0 10px;
+        list-style: none;
+    }
+
+    #footer .footer-content .footer-menu .footer-menu-item {
+        display: flex;
+        margin: 15px 0;
+        transition: all 300ms ease;
+    }
+
+    #footer .footer-content .footer-menu .footer-menu-item:hover {
+        color: #1d8954;
+        cursor: pointer;
+    }
+
+    #footer .footer-content .footer-menu p {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #919496;
+        font-size: 0.8rem;
+    }
+
+    .socials {
+        display: none;
+    }
+    
+    
+    .socials i {
+        margin: 0 20px;
+        font-size: 1.6rem;
+        transition: all 300ms ease;
+        color: white;
+    }
+    
+    .socials i:hover {
+        color: #1d8954;
+        cursor: pointer;
+    }
+    
+    /* ==== footer info ==== */
+    
+    .footer-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+        font-weight: bold;
+        color: #919496;
+        font-size: 0.9rem;
+        padding-top: 50px;
+    }
+    
+    .footer-info .footer-info-items {
+        display: block;
+        list-style: none;
+    }
+    
+    .footer-info .footer-info-items .footer-info-item {
+        display: flex;
+        margin: 10px 10px;
+    }
+    
+    .footer-info .footer-info-items .footer-info-item:hover {
+        color: #1d8954;
+        cursor: pointer;
+        transition: all 300ms ease;
+    }
+    
+    
+    .footer-info .rights .country {
+        display: block;
+    }
+    
+    .footer-info .rights .country p:hover {
+        color: #1d8954;
+        cursor: pointer;
+        transition: all 300ms ease;
+    }
+    
+    .footer-info .rights .brazil-flag {
+        height: 40px;
+        width: auto;
+        margin-top: 5px;
+        margin-left: 0;
+    }
+
+
 }
